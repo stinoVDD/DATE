@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Magische Date?</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: Arial, sans-serif;
+      background: radial-gradient(circle at top, #fff1ff, #ffb6c1 45%, #6a4c93);
+      overflow: hidden;
+    }
+
+    .moon {
+      position: absolute;
+      top: 40px;
+      right: 60px;
+      font-size: 70px;
+      filter: drop-shadow(0 0 20px white);
+    }
+
+    .creature {
+      position: absolute;
+      font-size: 42px;
+      animation: floaty 4s ease-in-out infinite;
+      user-select: none;
+    }
+
+    .cat1 { top: 15%; left: 10%; }
+    .cat2 { bottom: 12%; right: 12%; animation-delay: 1s; }
+    .dragon { top: 18%; right: 18%; animation-delay: 0.5s; }
+    .unicorn { bottom: 16%; left: 13%; animation-delay: 1.5s; }
+    .fox { top: 65%; left: 7%; animation-delay: 0.8s; }
+
+    @keyframes floaty {
+      0%, 100% { transform: translateY(0) rotate(-3deg); }
+      50% { transform: translateY(-18px) rotate(3deg); }
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.92);
+      padding: 42px;
+      border-radius: 32px;
+      text-align: center;
+      box-shadow: 0 25px 70px rgba(0,0,0,0.25);
+      max-width: 460px;
+      z-index: 2;
+      border: 3px solid rgba(255,255,255,0.8);
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      color: #ff4f81;
+      margin-bottom: 12px;
+    }
+
+    .subtitle {
+      color: #6a4c93;
+      font-size: 1.1rem;
+      margin-bottom: 30px;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      position: relative;
+    }
+
+    button {
+      border: none;
+      padding: 15px 30px;
+      border-radius: 999px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: 0.2s ease;
+    }
+
+    #yes {
+      background: linear-gradient(135deg, #ff4f81, #9b5de5);
+      color: white;
+      box-shadow: 0 8px 20px rgba(255,79,129,0.35);
+    }
+
+    #yes:hover {
+      transform: scale(1.15);
+    }
+
+    #no {
+      background: #ddd;
+      color: #777;
+      cursor: not-allowed;
+      opacity: 0.45;
+      pointer-events: none;
+      position: relative;
+    }
+
+    #no::after {
+      content: " beschermd door kattenmagie";
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: -28px;
+      font-size: 0.7rem;
+      color: #6a4c93;
+      white-space: nowrap;
+    }
+
+    .message {
+      margin-top: 34px;
+      font-size: 1.35rem;
+      color: #6a4c93;
+      font-weight: bold;
+      display: none;
+    }
+
+    .sparkle, .heart, .confetti {
+      position: absolute;
+      pointer-events: none;
+    }
+
+    .heart {
+      font-size: 26px;
+      animation: rise 3s linear forwards;
+    }
+
+    .sparkle {
+      font-size: 24px;
+      animation: sparkleRise 2.8s linear forwards;
+    }
+
+    .confetti {
+      width: 10px;
+      height: 10px;
+      animation: fall 2.5s linear forwards;
+    }
+.elf, .fairy {
+  position: absolute;
+  font-size: 48px;
+  animation: floaty 5s ease-in-out infinite;
+  user-select: none;
+}
+
+.elf1 {
+  top: 10%;
+  left: 20%;
+}
+
+.elf2 {
+  top: 20%;
+  right: 12%;
+  animation-delay: 1.5s;
+}
+
+.fairy1 {
+  bottom: 15%;
+  left: 25%;
+  animation-delay: 0.7s;
+}
+
+.fairy2 {
+  bottom: 20%;
+  right: 20%;
+  animation-delay: 2s;
+}
+
+    @keyframes rise {
+      0% { transform: translateY(0) scale(1); opacity: 1; }
+      100% { transform: translateY(-100vh) scale(1.8) rotate(360deg); opacity: 0; }
+    }
+
+    @keyframes sparkleRise {
+      0% { transform: translateY(0) scale(0.8); opacity: 1; }
+      100% { transform: translateY(-80vh) scale(1.6) rotate(720deg); opacity: 0; }
+    }
+
+    @keyframes fall {
+      0% { transform: translateY(-20px) rotate(0deg); opacity: 1; }
+      100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+  <div class="moon">🌙</div>
+
+  <div class="creature cat1">🐈‍⬛</div>
+  <div class="creature cat2">🐱</div>
+  <div class="creature dragon">🐉</div>
+  <div class="creature unicorn">🦄</div>
+  <div class="creature fox">🦊</div>
+<div class="elf elf1">🧝‍♀️</div>
+<div class="elf elf2">🧝</div>
+
+<div class="fairy fairy1">🧚</div>
+<div class="fairy fairy2">🧚‍♀️</div>
+
+  <div class="card">
+    <h1>wil jij op date met mij op 18 juni?</h1>
+    <div class="subtitle">
+  De kattenraad, het drakengenootschap, de elfen van het Zilverwoud
+  en één zeer officiële eenhoorn wachten op je antwoord.
+</div>
+
+    <div class="buttons">
+      <button id="yes">Ja, natuurlijk 💖</button>
+      <button id="no" disabled>Nee</button>
+    </div>
+
+    <div class="message" id="message">
+  ✨ De elfen zingen, de draken vliegen uit, de katten spinnen van geluk. ✨
+  <br><br>
+  Ik wist wel dat je de juiste keuze zou maken 🐱🧝‍♀️🐉🦄
+</div>
+  </div>
+
+  <script>
+    const yesButton = document.getElementById("yes");
+  const message = document.getElementById("message");
+
+  yesButton.addEventListener("click", async () => {
+    message.style.display = "block";
+    yesButton.textContent = "Quest geaccepteerd 💘";
+
+    for (let i = 0; i < 90; i++) createConfetti();
+    for (let i = 0; i < 35; i++) createFloatingEmoji(["💖", "💕", "💘", "🌹", "✨"]);
+    for (let i = 0; i < 28; i++) createFloatingEmoji(["🐱", "🐈‍⬛", "🐾", "🦊", "🦄", "🐉", "🦋", "🧝‍♀️", "🧚"]);
+
+    try {
+      await fetch("https://formspree.io/f/maqkkpyl", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          antwoord: "JA",
+          bericht: "Ze heeft ja geklikt voor de date op 18 juni 💖",
+          tijdstip: new Date().toLocaleString()
+        })
+      });
+    } catch (error) {
+      console.log("Melding kon niet verstuurd worden:", error);
+    }
+  });
+
+    function createConfetti() {
+      const confetti = document.createElement("div");
+      confetti.classList.add("confetti");
+      confetti.style.left = Math.random() * 100 + "vw";
+      confetti.style.backgroundColor = randomColor();
+      confetti.style.animationDuration = Math.random() * 2 + 1.5 + "s";
+      document.body.appendChild(confetti);
+      setTimeout(() => confetti.remove(), 3000);
+    }
+
+    function createFloatingEmoji(options) {
+      const emoji = document.createElement("div");
+      emoji.classList.add(Math.random() > 0.5 ? "heart" : "sparkle");
+      emoji.textContent = options[Math.floor(Math.random() * options.length)];
+      emoji.style.left = Math.random() * 100 + "vw";
+      emoji.style.bottom = "-40px";
+      emoji.style.animationDuration = Math.random() * 2 + 2 + "s";
+      document.body.appendChild(emoji);
+      setTimeout(() => emoji.remove(), 4000);
+    }
+
+    function randomColor() {
+      const colors = ["#ff4f81", "#ffd166", "#06d6a0", "#9b5de5", "#ef476f", "#ffffff"];
+      return colors[Math.floor(Math.random() * colors.length)];
+    }
+  </script>
+</body>
+</html>
